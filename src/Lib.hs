@@ -1,3 +1,8 @@
+-- Trabalho Programação Funcional
+-- Vitor Oliveira Diniz
+-- Kayo Xavier Nascimento
+
+
 module Lib where
 
 import Data.Maybe
@@ -35,7 +40,6 @@ instance Show Color where
 Tabuleiro de cores. Este "tabuleiro" não necessariamente é
 uma matriz quadrada.
 -}
-
 
 
 --IMPLEMENTAR INSTANCIA DE SHOW PARA O BOARD
@@ -195,7 +199,7 @@ cuja contagem for zero.
 
 printCounters :: Board -> IO ()
 printCounters board = do
-    
+
     putStr $ show Red ++" : "
     print $ countColor Red board
 
@@ -207,7 +211,15 @@ printCounters board = do
 
     putStr $ show Yellow ++ " : "
     print $ countColor Yellow board
-    
+
+
+showRow :: [Color] -> String
+showRow = concatMap (\color -> show color ++ " ")
+
+
+showBoard :: Board -> String
+showBoard = concatMap (\row -> showRow row ++ "\n")
+
 
 
 {- 

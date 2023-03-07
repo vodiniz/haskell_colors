@@ -1,3 +1,8 @@
+-- Trabalho Programação Funcional
+-- Vitor Oliveira Diniz
+-- Kayo Xavier Nascimento
+
+
 module Main (main) where
 
 import Lib
@@ -25,11 +30,11 @@ main = do
    input <- readLines
    let maybe_board = readColorLines input
    let board = createBoard maybe_board
-   print board
+   putStrLn $ "\n" ++ showBoard board
    printCounters board
-   putStrLn "Trocando todos os vermelhos por amarelo"
+   putStrLn "Trocando todos os vermelhos por amarelo\n"
    let new_board = fill Red Yellow board
-   print new_board
+   putStrLn $ showBoard new_board
    printCounters new_board
 
 
